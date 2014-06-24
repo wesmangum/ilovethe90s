@@ -5,7 +5,6 @@ var Leaderboard = traceur.require(__dirname + '/../models/leaderboard.js');
 
 exports.get = (req, res)=>{
 	Leaderboard.findByCharacter(req.query, scores=>{
-		console.log(scores);
 		res.render('leaderboards/index', {scores: scores}, (err, html)=>{
 			res.send(html);
 		});
